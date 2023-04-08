@@ -24,6 +24,6 @@ const addNewTodo = handleSubmit((data) => {
 <template>
   <form class="flex items-center gap-8" @submit="addNewTodo">
     <InputField name="todo" placeholder="Add new todo" class="focus:ring-primary" />
-    <MyButton class="ml-auto bg-primary px-6 hover:bg-primary/75">Add</MyButton>
+    <MyButton class="ml-auto bg-blue-500 px-6 hover:bg-blue-600">Add</MyButton>
   </form>
 </template>
