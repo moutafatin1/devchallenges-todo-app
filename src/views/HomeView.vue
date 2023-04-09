@@ -32,6 +32,10 @@ const addNewTodo = (body: string) => {
 
   todos.value.push(newTodo)
 }
+
+const deleteTodo = (id: number) => {
+  todos.value = todos.value.filter((todo) => todo.id !== id)
+}
 </script>
 
 <template>
@@ -39,6 +43,6 @@ const addNewTodo = (body: string) => {
     <h1 class="my-8 text-center text-5xl font-bold text-gray-700">#todo</h1>
     <StatusTab />
     <AddTodoForm :addNewTodo="addNewTodo" />
-    <TodoList :todos="todos" />
+    <TodoList :todos="todos" :deleteTodo="deleteTodo" />
   </main>
 </template>

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vee-validate/zod": "^4.8.4",
+    "iconify-icon": "^1.0.7",
     "pinia": "^2.0.32",
     "vee-validate": "^4.8.4",
     "vue": "^3.2.47",
