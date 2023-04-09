@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { MyButton } from '@/components/elements'
 import MyIcon from '@/components/elements/MyIcon.vue'
 import type { Todo } from '@/views/HomeView.vue'
 import { computed } from 'vue'
@@ -7,6 +8,7 @@ import { useRoute } from 'vue-router'
 const props = defineProps<{
   todos: Todo[]
   deleteTodo: (id: number) => void
+  deleteCompleted: () => void
 }>()
 
 const route = useRoute()
@@ -19,6 +21,8 @@ const filteredTodos = computed(() => {
   }
   return props.todos
 })
+
+const showDeleteCompleted = computed(() => route.query.filter === 'completed')
 </script>
 
 <template>
@@ -39,4 +43,7 @@ const filteredTodos = computed(() => {
       </button>
     </li>
   </ul>
+  <MyButton v-if="showDeleteCompleted" @click="deleteCompleted" variant="danger" class="ml-auto">
+    <MyIcon icon="ic:twotone-delete-outline" class="mr-2" /> Delete all</MyButton
+  >
 </template>
